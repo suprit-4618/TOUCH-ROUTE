@@ -55,10 +55,10 @@ export const OpenCVControls: React.FC<OpenCVControlsProps> = ({
           </div>
           <div>
             <h3 className="text-sm font-bold text-zinc-900 tracking-tight">
-              OpenCV Architectural Preprocessing Pipeline
+              Floor Plan Image Preprocessing
             </h3>
             <p className="text-xs text-zinc-500">
-              Deterministic computer-vision normalization for wall extraction and OCR readability.
+              Image cleanup to enhance wall detection and room label recognition.
             </p>
           </div>
         </div>
@@ -71,7 +71,7 @@ export const OpenCVControls: React.FC<OpenCVControlsProps> = ({
           }
         >
           {floorPlan.analysis_status === 'processed' || floorPlan.processed_file_path
-            ? 'OpenCV Processed'
+            ? 'Processed'
             : 'Raw Upload'}
         </Badge>
       </div>

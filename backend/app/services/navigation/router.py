@@ -50,9 +50,9 @@ def find_accessible_route(
 
     if accessible_only:
         if not getattr(start_node, "is_accessible", True):
-            raise ValueError(f"Cannot calculate accessible route: Starting location '{start_node.label}' is not step-free accessible.")
+            raise ValueError(f"Starting location '{start_node.label}' is not step-free accessible. Uncheck 'Step-Free Accessible Only' to calculate a route with stairs.")
         if not getattr(dest_node, "is_accessible", True):
-            raise ValueError(f"Cannot calculate accessible route: Destination '{dest_node.label}' is not step-free accessible.")
+            raise ValueError(f"Destination '{dest_node.label}' is not step-free accessible. Uncheck 'Step-Free Accessible Only' to calculate a route with stairs.")
 
     # Build NetworkX undirected graph
     G = nx.Graph()

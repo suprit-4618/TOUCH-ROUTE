@@ -50,7 +50,7 @@ export const RouteCalculatorModal: React.FC<RouteCalculatorModalProps> = ({
     }
   }, [isOpen, project]);
 
-  const handleCalculateRoute = async () => {
+  const handleCalculateRoute = async (overrideAccessible?: boolean | React.MouseEvent) => {
     if (!project || !startNodeId || !destNodeId) return;
     if (startNodeId === destNodeId) {
       setError('Start point and Destination point must be distinct.');
@@ -65,7 +65,7 @@ export const RouteCalculatorModal: React.FC<RouteCalculatorModalProps> = ({
         project_id: project.id,
         start_node_id: startNodeId,
         destination_node_id: destNodeId,
-        accessible_only: accessibleOnly,
+        accessible_only: typeof overrideAccessible === 'boolean' ? overrideAccessible : accessibleOnly,
       });
       playFeedbackTone('success');
       setRouteResult(result);
@@ -113,15 +113,15 @@ export const RouteCalculatorModal: React.FC<RouteCalculatorModalProps> = ({
         handleStopSpeaking();
         onClose();
       }}
-      title={`Deterministic Route Planner: ${project?.name || ''}`}
-      description="Calculates guaranteed step-free indoor routes using NetworkX A* pathfinding over validated spatial geometry."
+      title={`Route Planner: ${project?.name || ''}`}
+      description="Calculate indoor walking directions between rooms and landmarks."
       maxWidth="lg"
     >
       <div className="space-y-6 text-zinc-800 text-sm">
         {loading ? (
           <div className="py-12 flex flex-col items-center justify-center text-zinc-500 gap-2">
             <Loader2 className="w-6 h-6 animate-spin text-zinc-700" />
-            <span>Loading verified building topology...</span>
+            <span>Loading rooms and locations...</span>
           </div>
         ) : (
           <>
@@ -130,8 +130,22 @@ export const RouteCalculatorModal: React.FC<RouteCalculatorModalProps> = ({
                 role="alert"
                 className="p-3 bg-red-50 border border-red-200 text-red-800 text-xs rounded-lg font-medium flex items-center gap-2"
               >
-                <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
-                <span>{error}</span>
+                <AlertCircle className="w-4 h-4 shrink-0 text-red-600 mt-0.5" />
+                <div className="space-y-1.5 flex-1">
+                  <div>{error}</div>
+                  {accessibleOnly && error.toLowerCase().includes('not step-free') && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setAccessibleOnly(false);
+                        handleCalculateRoute(false);
+                      }}
+                      className="text-xs text-red-950 font-semibold underline hover:text-black inline-flex items-center gap-1 cursor-pointer"
+                    >
+                      Allow stairs and calculate route &rarr;
+                    </button>
+                  )}
+                </div>
               </div>
             )}
 
@@ -149,7 +163,7 @@ export const RouteCalculatorModal: React.FC<RouteCalculatorModalProps> = ({
                 >
                   {projectDetail?.spatial_nodes.map((node) => (
                     <option key={node.id} value={node.id}>
-                      {node.label} ({node.node_type})
+                      {node.label} ({node.node_type}{node.is_accessible === false ? ' - stairs' : ''})
                     </option>
                   ))}
                 </select>
@@ -167,7 +181,7 @@ export const RouteCalculatorModal: React.FC<RouteCalculatorModalProps> = ({
                 >
                   {projectDetail?.spatial_nodes.map((node) => (
                     <option key={node.id} value={node.id}>
-                      {node.label} ({node.node_type})
+                      {node.label} ({node.node_type}{node.is_accessible === false ? ' - stairs' : ''})
                     </option>
                   ))}
                 </select>
