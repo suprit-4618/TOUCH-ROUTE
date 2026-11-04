@@ -140,7 +140,9 @@ export class VoiceService {
     // Attempt Live Google Gemini TTS Synthesis
     let ttsSuccess = false;
     try {
-      const response = await fetch('/api/v1/voice/synthesize', {
+      const backendUrl = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '');
+      const synthesizeUrl = backendUrl ? `${backendUrl}/api/v1/voice/synthesize` : '/api/v1/voice/synthesize';
+      const response = await fetch(synthesizeUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: cleanText, voice_name: 'Kore' }),
