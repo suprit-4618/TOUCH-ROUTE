@@ -14,8 +14,15 @@ class Settings(BaseSettings):
     # Database: Supports SQLite (out-of-box local dev) and PostgreSQL/PostGIS (production/docker)
     DATABASE_URL: str = "sqlite:///./touchroute.db"
 
+    @field_validator("DATABASE_URL", mode="before")
+    @classmethod
+    def assemble_database_url(cls, v: str) -> str:
+        if os.environ.get("VERCEL") and v in ("sqlite:///./touchroute.db", "sqlite:///touchroute.db"):
+            return "sqlite:////tmp/touchroute.db"
+        return v
+
     # File uploads
-    UPLOAD_DIR: Path = Path("backend/uploads").resolve()
+    UPLOAD_DIR: Path = Path("/tmp/uploads" if os.environ.get("VERCEL") else "backend/uploads").resolve()
     MAX_UPLOAD_SIZE_BYTES: int = 25 * 1024 * 1024  # 25 MB
     ALLOWED_EXTENSIONS: List[str] = [".png", ".jpg", ".jpeg", ".pdf"]
     ALLOWED_MIME_TYPES: List[str] = [
@@ -63,5 +70,8 @@ class Settings(BaseSettings):
 settings = Settings()
 
 # Ensure upload directory exists
-os.makedirs(settings.UPLOAD_DIR, exist_ok=True)
+try:
+    os.makedirs(settings.UPLOAD_DIR, exist_ok=True)
+except Exception:
+    pass
 

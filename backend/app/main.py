@@ -20,6 +20,18 @@ async def lifespan(app: FastAPI):
     Base.metadata.create_all(bind=engine)
     logger.info("TouchRoute backend database initialized.")
 
+    # Seed demonstration environment if database is empty (ensures zero-setup demo experience on Vercel/fresh deploys)
+    try:
+        from app.database.seed import seed_hospital_demonstration
+        from app.models.project import Project
+        with SessionLocal() as db:
+            if db.query(Project).count() == 0:
+                logger.info("Database empty, seeding demonstration hospital environment...")
+                seed_hospital_demonstration(db)
+                logger.info("Demonstration environment seeded.")
+    except Exception as e:
+        logger.warning(f"Demo seeding skipped: {e}")
+
     yield
     logger.info("TouchRoute backend shutting down.")
 
