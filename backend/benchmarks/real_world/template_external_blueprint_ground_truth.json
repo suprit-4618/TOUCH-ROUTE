@@ -1,0 +1,137 @@
+{
+  "test_id": "REAL-001-EXTERNAL-FACILITY-TEMPLATE",
+  "dataset_type": "real_world",
+  "building_name": "Municipal Civic Center - Real Blueprint Evaluation",
+  "floor_name": "Ground Level Architectural CAD",
+  "original_dimensions": {
+    "width": 2400,
+    "height": 1800
+  },
+  "scale_meters_per_pixel": 0.038,
+  "rooms": [
+    {
+      "id": "rw-ent-1",
+      "label": "West Public Entrance (Automatic Door)",
+      "room_number": null,
+      "node_type": "entrance",
+      "center_x": 220.0,
+      "center_y": 900.0,
+      "bounding_box": { "min_x": 160.0, "min_y": 820.0, "max_x": 280.0, "max_y": 980.0 },
+      "level_number": 1,
+      "is_accessible": true
+    },
+    {
+      "id": "rw-info",
+      "label": "Visitor Information & Guidance Desk",
+      "room_number": "100",
+      "node_type": "reception",
+      "center_x": 580.0,
+      "center_y": 900.0,
+      "bounding_box": { "min_x": 500.0, "min_y": 810.0, "max_x": 660.0, "max_y": 990.0 },
+      "level_number": 1,
+      "is_accessible": true
+    },
+    {
+      "id": "rw-clerk",
+      "label": "City Clerk & Vital Records",
+      "room_number": "104",
+      "node_type": "room",
+      "center_x": 1100.0,
+      "center_y": 550.0,
+      "bounding_box": { "min_x": 950.0, "min_y": 420.0, "max_x": 1250.0, "max_y": 680.0 },
+      "level_number": 1,
+      "is_accessible": true
+    },
+    {
+      "id": "rw-counsel",
+      "label": "Council Chambers & Hearing Hall",
+      "room_number": "110",
+      "node_type": "room",
+      "center_x": 1800.0,
+      "center_y": 900.0,
+      "bounding_box": { "min_x": 1550.0, "min_y": 650.0, "max_x": 2050.0, "max_y": 1150.0 },
+      "level_number": 1,
+      "is_accessible": true
+    },
+    {
+      "id": "rw-restroom",
+      "label": "Gender-Neutral Single Occupancy Restroom",
+      "room_number": "108",
+      "node_type": "restroom",
+      "center_x": 1100.0,
+      "center_y": 1250.0,
+      "bounding_box": { "min_x": 980.0, "min_y": 1150.0, "max_x": 1220.0, "max_y": 1350.0 },
+      "level_number": 1,
+      "is_accessible": true
+    }
+  ],
+  "doors": [
+    {
+      "id": "rw-d1",
+      "source_label": "West Public Entrance (Automatic Door)",
+      "target_label": "Visitor Information & Guidance Desk",
+      "connection_type": "door",
+      "is_accessible": true
+    },
+    {
+      "id": "rw-d2",
+      "source_label": "Visitor Information & Guidance Desk",
+      "target_label": "City Clerk & Vital Records",
+      "connection_type": "door",
+      "is_accessible": true
+    },
+    {
+      "id": "rw-d3",
+      "source_label": "Visitor Information & Guidance Desk",
+      "target_label": "Council Chambers & Hearing Hall",
+      "connection_type": "door",
+      "is_accessible": true
+    },
+    {
+      "id": "rw-d4",
+      "source_label": "Visitor Information & Guidance Desk",
+      "target_label": "Gender-Neutral Single Occupancy Restroom",
+      "connection_type": "door",
+      "is_accessible": true
+    }
+  ],
+  "corridors": [
+    {
+      "id": "rw-c1",
+      "label": "Great Hall Concourse",
+      "connects_to": [
+        "Visitor Information & Guidance Desk",
+        "City Clerk & Vital Records",
+        "Council Chambers & Hearing Hall",
+        "Gender-Neutral Single Occupancy Restroom"
+      ]
+    }
+  ],
+  "multi_floor_transitions": [
+    {
+      "id": "rw-elev-1",
+      "node_type": "elevator",
+      "label": "West Passenger Elevator (Auditory Signals)",
+      "level_from": 1,
+      "level_to": 2,
+      "is_accessible": true
+    }
+  ],
+  "test_routes": [
+    {
+      "id": "rw-route-1",
+      "start_label": "West Public Entrance (Automatic Door)",
+      "dest_label": "Council Chambers & Hearing Hall",
+      "accessible_required": true,
+      "expect_solvable": true
+    },
+    {
+      "id": "rw-route-2",
+      "start_label": "West Public Entrance (Automatic Door)",
+      "dest_label": "Gender-Neutral Single Occupancy Restroom",
+      "accessible_required": true,
+      "expect_solvable": true
+    }
+  ]
+}
+

@@ -1,0 +1,163 @@
+{
+  "test_id": "SYNTH-001-HEALTHCARE-CLINIC",
+  "dataset_type": "synthetic",
+  "building_name": "Metro Health Clinic",
+  "floor_name": "Level 1 & 2 Accessible Facility",
+  "original_dimensions": {
+    "width": 1600,
+    "height": 1200
+  },
+  "scale_meters_per_pixel": 0.045,
+  "rooms": [
+    {
+      "id": "gt-ent",
+      "label": "Main Accessible Entrance",
+      "room_number": null,
+      "node_type": "entrance",
+      "center_x": 150.0,
+      "center_y": 600.0,
+      "bounding_box": { "min_x": 100.0, "min_y": 550.0, "max_x": 200.0, "max_y": 650.0 },
+      "level_number": 1,
+      "is_accessible": true
+    },
+    {
+      "id": "gt-rec",
+      "label": "Central Reception & Check-In",
+      "room_number": "100",
+      "node_type": "reception",
+      "center_x": 400.0,
+      "center_y": 600.0,
+      "bounding_box": { "min_x": 320.0, "min_y": 520.0, "max_x": 480.0, "max_y": 680.0 },
+      "level_number": 1,
+      "is_accessible": true
+    },
+    {
+      "id": "gt-aud",
+      "label": "Audiology Suite",
+      "room_number": "101",
+      "node_type": "room",
+      "center_x": 750.0,
+      "center_y": 350.0,
+      "bounding_box": { "min_x": 650.0, "min_y": 250.0, "max_x": 850.0, "max_y": 450.0 },
+      "level_number": 1,
+      "is_accessible": true
+    },
+    {
+      "id": "gt-opt",
+      "label": "Optometry & Low-Vision Exam",
+      "room_number": "102",
+      "node_type": "room",
+      "center_x": 750.0,
+      "center_y": 850.0,
+      "bounding_box": { "min_x": 650.0, "min_y": 750.0, "max_x": 850.0, "max_y": 950.0 },
+      "level_number": 1,
+      "is_accessible": true
+    },
+    {
+      "id": "gt-wc",
+      "label": "Universal Accessible Restroom",
+      "room_number": "103",
+      "node_type": "restroom",
+      "center_x": 1050.0,
+      "center_y": 600.0,
+      "bounding_box": { "min_x": 980.0, "min_y": 530.0, "max_x": 1120.0, "max_y": 670.0 },
+      "level_number": 1,
+      "is_accessible": true
+    },
+    {
+      "id": "gt-pharm",
+      "label": "Outpatient Pharmacy",
+      "room_number": "201",
+      "node_type": "room",
+      "center_x": 750.0,
+      "center_y": 350.0,
+      "bounding_box": { "min_x": 650.0, "min_y": 250.0, "max_x": 850.0, "max_y": 450.0 },
+      "level_number": 2,
+      "is_accessible": true
+    }
+  ],
+  "doors": [
+    {
+      "id": "d-1",
+      "source_label": "Main Accessible Entrance",
+      "target_label": "Central Reception & Check-In",
+      "connection_type": "door",
+      "is_accessible": true
+    },
+    {
+      "id": "d-2",
+      "source_label": "Central Reception & Check-In",
+      "target_label": "Audiology Suite",
+      "connection_type": "door",
+      "is_accessible": true
+    },
+    {
+      "id": "d-3",
+      "source_label": "Central Reception & Check-In",
+      "target_label": "Optometry & Low-Vision Exam",
+      "connection_type": "door",
+      "is_accessible": true
+    },
+    {
+      "id": "d-4",
+      "source_label": "Central Reception & Check-In",
+      "target_label": "Universal Accessible Restroom",
+      "connection_type": "door",
+      "is_accessible": true
+    }
+  ],
+  "corridors": [
+    {
+      "id": "c-1",
+      "label": "Central Concourse",
+      "connects_to": [
+        "Central Reception & Check-In",
+        "Audiology Suite",
+        "Optometry & Low-Vision Exam",
+        "Universal Accessible Restroom"
+      ]
+    }
+  ],
+  "multi_floor_transitions": [
+    {
+      "id": "mf-elev",
+      "node_type": "elevator",
+      "label": "Auditory Braille Elevator",
+      "level_from": 1,
+      "level_to": 2,
+      "is_accessible": true
+    },
+    {
+      "id": "mf-stair",
+      "node_type": "stairs",
+      "label": "East Emergency Stairs",
+      "level_from": 1,
+      "level_to": 2,
+      "is_accessible": false
+    }
+  ],
+  "test_routes": [
+    {
+      "id": "route-1",
+      "start_label": "Main Accessible Entrance",
+      "dest_label": "Audiology Suite",
+      "accessible_required": true,
+      "expect_solvable": true
+    },
+    {
+      "id": "route-2",
+      "start_label": "Main Accessible Entrance",
+      "dest_label": "Universal Accessible Restroom",
+      "accessible_required": true,
+      "expect_solvable": true
+    },
+    {
+      "id": "route-3-multilevel",
+      "start_label": "Main Accessible Entrance",
+      "dest_label": "Outpatient Pharmacy",
+      "accessible_required": true,
+      "expect_solvable": true
+    }
+  ]
+}
+
