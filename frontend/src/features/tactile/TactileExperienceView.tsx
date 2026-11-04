@@ -163,11 +163,11 @@ export const TactileExperienceView: React.FC<TactileExperienceViewProps> = ({
                   Universal Non-Visual Access
                 </span>
                 <h2 className="text-xl font-bold text-zinc-950 tracking-tight">
-                  Physical Wayfinding Standards
+                  Tactile Wayfinding Design
                 </h2>
                 <p className="text-xs text-zinc-600 leading-relaxed max-w-3xl">
-                  TouchRoute tactile maps are designed to be explored by touch alone without requiring a smartphone.
-                  Installed at building entrances and corridor intersections, they conform to ISO 21542 and ADA Standard 703.
+                  TouchRoute tactile maps can be explored by touch alone.
+                  Designed for building entrances and main intersections with raised perimeter walls, pathways, and Braille labels.
                 </p>
               </div>
 

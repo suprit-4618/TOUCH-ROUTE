@@ -1,7 +1,7 @@
 """3D Tactile Map STL Mesh Generator for TouchRoute.
 
 Converts verified architectural floor plans, spatial graphs, and Braille labels
-into authentic, 3D-printable solid geometry conforming to ISO 21542 and ADA standards.
+into 3D-printable solid geometry with raised walls, pathways, and Braille labels.
 Generates genuine watertight Binary and ASCII STL files with real facets and normals.
 """
 

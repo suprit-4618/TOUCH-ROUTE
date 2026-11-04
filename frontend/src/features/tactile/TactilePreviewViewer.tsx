@@ -327,7 +327,7 @@ export const TactilePreviewViewer: React.FC<TactilePreviewViewerProps> = ({
         '#221f1d'
       );
 
-      // Orientation notch on top-left (ISO 21542 tactile standard)
+      // Orientation notch on top-left (tactile orientation corner)
       ctx.fillStyle = '#44403c';
       const notchP1 = project3D(0, 0, baseThickness);
       const notchP2 = project3D(15, 0, baseThickness);
@@ -728,7 +728,7 @@ export const TactilePreviewViewer: React.FC<TactilePreviewViewerProps> = ({
                 <Sliders className="w-4 h-4 text-zinc-700" />
                 <span>Physical Dimensions</span>
               </h3>
-              <span className="text-[11px] font-mono text-zinc-400">ISO 21542</span>
+              <span className="text-[11px] font-mono text-zinc-400">STL / SVG</span>
             </div>
 
             {/* Build Envelope Selection */}

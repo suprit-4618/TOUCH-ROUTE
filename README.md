@@ -8,7 +8,7 @@
 
 ## Stage 1 Architecture & Status
 
-TouchRoute adheres to strict non-visual first principles and WCAG 2.1 AAA contrast and typography requirements. Rather than hallucinating indoor directions or faking live positioning, the platform relies on verifiable graph topology.
+TouchRoute is designed for accessible indoor navigation. Directions are calculated using verified floor plan geometry and graph algorithms rather than unverified estimations.
 
 ### Tech Stack Configured
 - **Frontend**: React 18, TypeScript 5, Vite, Tailwind CSS, Framer Motion, Lucide Icons, Web Speech API abstraction, Web Audio acoustic cue synthesizer.
@@ -60,13 +60,11 @@ This launches PostGIS (Port 5432), FastAPI Backend (Port 8000), and Frontend Ngi
 
 ---
 
-## Accessibility Capabilities Built-In
+## Key Capabilities
 
-1. **High Contrast Mode**: Instant one-click toggle adhering to strict black and off-white contrast (>7:1).
-2. **Scalable Typography**: Standard, Large, and Extra Large font scaling preserved in persistent storage.
-3. **Acoustic Audio Feedback**: Web Audio API frequency tones indicating navigation steps and form confirmations.
-4. **Reduced Motion**: Respects `prefers-reduced-motion` media query and offers a manual "Calm" override.
-5. **Screen Reader Live Regions**: `aria-live="polite"` feedback announcements for every state update and dialog.
-6. **Focus Trap & Keyboard Control**: Semantic HTML with visible 3px amber focus rings and Escape key handlers.
-7. **Physical Tactile Standards**: 3D printable relief conforming to ISO 21542 and ADA Title III guidelines.
+1. **Turn-by-Turn Spoken Guidance**: Conversational spoken directions and landmark cues with Google Gemini TTS synthesis and browser fallback.
+2. **Shortest-Path Graph Routing**: Step-free indoor routing using Dijkstra and A* pathfinding over verified floor plan coordinates.
+3. **Physical 3D Tactile Maps**: 3D-printable STL relief models with raised walls, corridor paths, and Braille labels.
+4. **Interactive Floor Plan Review**: Administrative verification tools to inspect, adjust, and confirm doors, rooms, and transitions.
+5. **Screen Reader & Keyboard Navigable**: Semantic HTML, ARIA announcements, and complete keyboard navigation.
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, ShieldCheck, Layers } from 'lucide-react';
+import { Compass } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -17,18 +17,8 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-sm text-zinc-400 max-w-md leading-relaxed">
-              TouchRoute transforms building floor plans into accessible navigation experiences through deterministic spatial topology, dynamic voice guidance, and 3D tactile maps.
+              TouchRoute turns building floor plans into accessible navigation with spoken directions and 3D tactile maps.
             </p>
-            <div className="flex items-center gap-2 pt-1">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-zinc-900 text-zinc-300 text-xs border border-zinc-800 font-medium">
-                <ShieldCheck className="w-3.5 h-3.5 text-zinc-300" />
-                WCAG 2.1 AAA Aligned
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-zinc-900 text-zinc-300 text-xs border border-zinc-800 font-medium">
-                <Layers className="w-3.5 h-3.5 text-zinc-300" />
-                Non-Visual First
-              </span>
-            </div>
           </div>
 
           {/* Column 2: Capabilities */}
@@ -38,33 +28,33 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs text-zinc-400">
               <li>Architectural Floor Plan Parsing</li>
-              <li>Deterministic Dijkstra &amp; A* Routing</li>
-              <li>Spoken Landmark Direction</li>
+              <li>Shortest-Path Graph Routing</li>
+              <li>Turn-by-Turn Spoken Guidance</li>
               <li>3D Physical Tactile Maps (STL)</li>
-              <li>Standardized Braille Signage</li>
-              <li>Verification Workflows</li>
+              <li>Tactile Braille Signage</li>
+              <li>Topology Verification Tools</li>
             </ul>
           </div>
 
-          {/* Column 3: Standards */}
+          {/* Column 3: Approach */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-3">
-              Standards &amp; Integrity
+              Navigation Design
             </h4>
             <p className="text-xs text-zinc-400 leading-relaxed">
-              Indoor routes are calculated strictly from verified architectural geometry. Planned routes are decoupled from physical sensor confirmations.
+              Indoor routes are calculated from verified floor plan geometry and step-free transitions.
             </p>
             <p className="text-[11px] text-zinc-500 mt-3 font-mono">
-              Version 1.0.0 &bull; Modular Speech Architecture
+              Version 1.0.0
             </p>
           </div>
         </div>
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
-          <p>&copy; {new Date().getFullYear()} TouchRoute Navigation Platform.</p>
+          <p>&copy; {new Date().getFullYear()} TouchRoute.</p>
           <div className="flex items-center gap-6">
-            <span>ISO 21542 Tactile Standards</span>
-            <span>ADA Title III Aligned</span>
+            <span>Tactile 3D Models</span>
+            <span>Spoken Guidance</span>
             <span>Keyboard Accessible</span>
           </div>
         </div>

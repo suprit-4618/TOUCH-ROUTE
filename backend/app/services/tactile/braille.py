@@ -68,7 +68,7 @@ DIGIT_TO_LETTER = {
 NUMBER_SIGN_DOTS = [3, 4, 5, 6]
 
 # Standard Marburg Medium physical dimensions (in millimeters)
-# Conforms to ISO 21542, ADA Standards 703, and Tactile Signage Guidelines
+# Standard physical Braille dimensions (in millimeters)
 DOT_DIAMETER_MM: float = 1.5
 DOT_HEIGHT_MM: float = 0.7
 DOT_SPACING_MM: float = 2.5      # Distance between dot centers within a cell

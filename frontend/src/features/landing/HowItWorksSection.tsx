@@ -16,25 +16,25 @@ export const HowItWorksSection: React.FC = () => {
       step: '02',
       title: 'Spatial Topology Extraction',
       description:
-        'Interpret room boundaries, corridor networks, doors, stairs, elevators, and room numbers into structured geometric coordinates.',
+        'Detect room boundaries, corridor networks, doors, stairs, elevators, and room numbers into structured coordinates.',
       icon: <Eye className="w-4 h-4 text-zinc-900" />,
-      detail: 'Structured schema strictly validated by backend graph engine.',
+      detail: 'Converts floor plans into structured waypoints and connections.',
     },
     {
       step: '03',
       title: 'Verification & Review',
       description:
-        'Building managers or accessibility specialists inspect detected elements, adjust labels, and confirm accessible transitions.',
+        'Building managers inspect detected elements, adjust labels, and confirm accessible transitions.',
       icon: <CheckCircle2 className="w-4 h-4 text-zinc-900" />,
-      detail: 'Unverified conjectures are never silently promoted to navigation routes.',
+      detail: 'Review and confirm routes before publishing.',
     },
     {
       step: '04',
       title: 'Voice & Physical Tactile Export',
       description:
-        'Visitors navigate using conversational voice guidance, or export physical 3D printable tactile maps with ISO-compliant Braille signage.',
+        'Visitors navigate using conversational voice guidance, or export 3D-printable tactile maps with Braille labels.',
       icon: <Printer className="w-4 h-4 text-zinc-900" />,
-      detail: 'Produces ready-to-slice STL meshes and tactile vector SVG files.',
+      detail: 'Produces ready-to-slice STL meshes and vector SVG files.',
     },
   ];
 
@@ -43,13 +43,13 @@ export const HowItWorksSection: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mb-14">
           <span className="text-xs font-semibold uppercase tracking-wider text-zinc-800 bg-zinc-100 px-2.5 py-1 rounded border border-zinc-200">
-            Pipeline Architecture
+            Workflow
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-950 tracking-tight mt-3">
             How TouchRoute Works
           </h2>
           <p className="text-zinc-600 text-sm sm:text-base mt-2 leading-relaxed">
-            Indoor navigation for blind individuals requires spatial precision. Here is the verified four-stage pipeline from blueprint to independent movement.
+            From architectural floor plans to spoken directions and 3D tactile maps in four steps.
           </p>
         </div>
 

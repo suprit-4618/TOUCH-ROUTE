@@ -1,8 +1,7 @@
 """Tactile Reference Sheet and Assembly PDF Generator for TouchRoute.
 
 Creates official accessible documentation for 3D printed and swell-form tactile maps.
-Includes tactile orientation guidelines, Braille symbol index, physical scale ratios,
-and accessibility verification certification conforming to ISO 21542.
+Includes tactile orientation guidelines, Braille symbol index, and physical scale ratios.
 """
 
 import io
@@ -96,9 +95,9 @@ def generate_tactile_pdf(
 
     # Verification Badge & Integrity Notice
     cert_text = (
-        "<b>HUMAN-VERIFIED INDOOR GEOMETRY</b><br/>"
-        "This tactile map is generated strictly from human-verified architectural elements. "
-        "Dimensionally engineered according to design guidelines from ISO 21542, ADA Standards Section 703, and Marburg Medium Braille specifications."
+        "<b>VERIFIED INDOOR GEOMETRY</b><br/>"
+        "This tactile map is generated from verified architectural floor plan elements. "
+        "Engineered with raised wall contours, corridor pathways, and Braille tactile labels."
     )
     cert_data = [[
         Paragraph(cert_text, ParagraphStyle("CertText", fontName="Helvetica", fontSize=9, leading=13, textColor=colors.HexColor("#065f46")))
@@ -116,14 +115,14 @@ def generate_tactile_pdf(
     # Physical Specifications Table
     story.append(Paragraph("1. Fabrication &amp; 3D Printing Parameters", section_heading))
     spec_rows = [
-        [Paragraph("<b>Parameter</b>", body_style), Paragraph("<b>Specification</b>", body_style), Paragraph("<b>Guideline Alignment</b>", body_style)],
-        [Paragraph("Base Plate Dimensions", body_style), Paragraph(base_dimensions_mm, body_style), Paragraph("ADA 703.2 Mounting Envelope Guidelines", body_style)],
-        [Paragraph("Wall Relief Height", body_style), Paragraph("2.5 mm above base", body_style), Paragraph("ISO 21542 Tactile Contrast Guidelines", body_style)],
+        [Paragraph("<b>Parameter</b>", body_style), Paragraph("<b>Specification</b>", body_style), Paragraph("<b>Description</b>", body_style)],
+        [Paragraph("Base Plate Dimensions", body_style), Paragraph(base_dimensions_mm, body_style), Paragraph("Standard Build Envelope", body_style)],
+        [Paragraph("Wall Relief Height", body_style), Paragraph("2.5 mm above base", body_style), Paragraph("Finger-Detectable Relief", body_style)],
         [Paragraph("Wall Stroke Width", body_style), Paragraph("1.8 mm solid extrusion", body_style), Paragraph("Finger Traceable Relief Threshold", body_style)],
-        [Paragraph("Braille Dot Height", body_style), Paragraph("0.70 mm (0.6 - 0.8 mm target)", body_style), Paragraph("Marburg Medium Dimensional Guidelines", body_style)],
-        [Paragraph("Braille Dot Diameter", body_style), Paragraph("1.50 mm spherical base", body_style), Paragraph("Unified English Braille (UEB) Standard", body_style)],
+        [Paragraph("Braille Dot Height", body_style), Paragraph("0.70 mm (0.6 - 0.8 mm target)", body_style), Paragraph("Tactile Reading Elevation", body_style)],
+        [Paragraph("Braille Dot Diameter", body_style), Paragraph("1.50 mm spherical base", body_style), Paragraph("Standard Braille Dot Geometry", body_style)],
         [Paragraph("Physical Map Scale", body_style), Paragraph(scale_label, body_style), Paragraph("Metric Preservation from Blueprint", body_style)],
-        [Paragraph("Orientation Guide", body_style), Paragraph("Tactile notch at top edge points North", body_style), Paragraph("Universal Tactile Orientation", body_style)],
+        [Paragraph("Orientation Guide", body_style), Paragraph("Tactile notch at top edge points North", body_style), Paragraph("Orientation Reference", body_style)],
     ]
     spec_table = Table(spec_rows, colWidths=[150, 180, 200])
     spec_table.setStyle(TableStyle([

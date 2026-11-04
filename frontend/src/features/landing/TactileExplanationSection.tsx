@@ -18,15 +18,15 @@ export const TactileExplanationSection: React.FC<TactileSectionProps> = ({
           {/* Left Column: Technical explanation */}
           <div className="lg:col-span-7 space-y-6">
             <span className="text-xs font-semibold uppercase tracking-wider text-zinc-800 bg-zinc-100 px-2.5 py-1 rounded border border-zinc-200">
-              Physical Accessibility
+              Tactile Maps
             </span>
 
             <h2 className="text-3xl sm:text-4xl font-bold text-zinc-950 tracking-tight">
-              Tactile Mapping for Physical 3D Fabrication
+              3D Tactile Maps for Physical Exploration
             </h2>
 
             <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
-              Tactile maps bridge the digital and physical worlds. By translating digital spatial graphs into relief surfaces with calibrated elevation steps, blind users can build mental spatial maps with their fingertips before navigating an unfamiliar building.
+              Tactile maps translate floor plan geometry into 3D relief surfaces with distinct elevation levels, allowing users to build a mental spatial layout with their fingertips before navigating.
             </p>
 
             {/* Dimensional and Relief standards */}
@@ -51,19 +51,19 @@ export const TactileExplanationSection: React.FC<TactileSectionProps> = ({
 
               <div className="p-4 rounded-xl bg-white border border-zinc-200/90 shadow-2xs">
                 <span className="text-xs font-mono font-semibold text-zinc-950 block mb-1">
-                  ISO BRAILLE LABELS
+                  BRAILLE LABELS
                 </span>
                 <p className="text-xs text-zinc-600 leading-relaxed">
-                  Standard UEB Grade 1 Braille dot grid (0.8mm dot height, 2.5mm cell spacing) for immediate tactile reading.
+                  Braille dot grid (0.8mm dot height, 2.5mm spacing) for tactile reading of room names and landmarks.
                 </p>
               </div>
 
               <div className="p-4 rounded-xl bg-white border border-zinc-200/90 shadow-2xs">
                 <span className="text-xs font-mono font-semibold text-zinc-950 block mb-1">
-                  FABRICATION-READY STL
+                  3D PRINTABLE STL
                 </span>
                 <p className="text-xs text-zinc-600 leading-relaxed">
-                  Watertight manifold mesh generation verified for standard FDM and SLA 180mm x 180mm build envelopes.
+                  Watertight manifold mesh generation ready for standard FDM and resin 3D printers.
                 </p>
               </div>
             </div>
@@ -76,7 +76,7 @@ export const TactileExplanationSection: React.FC<TactileSectionProps> = ({
                   onClick={onOpenTactileModal}
                   icon={<ChevronRight className="w-4 h-4 text-zinc-600" />}
                 >
-                  Inspect Tactile Studio
+                  Open Tactile Preview
                 </Button>
               </div>
             )}
@@ -90,7 +90,7 @@ export const TactileExplanationSection: React.FC<TactileSectionProps> = ({
                   Cross-Section Relief Profile
                 </span>
                 <span className="text-[11px] text-zinc-400 font-mono">
-                  ISO 21542
+                  3D Extrusion
                 </span>
               </div>
 

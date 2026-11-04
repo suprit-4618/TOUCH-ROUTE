@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Compass, Shield, Printer, Layers, MapPin, Volume2 } from 'lucide-react';
+import { ArrowRight, Printer, Layers, MapPin, Volume2 } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 
 interface HeroSectionProps {
@@ -18,31 +18,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           
           {/* Left Column: Heading, Description & CTAs */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 text-zinc-900 border border-zinc-200 text-xs font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-900" />
-              Indoor Navigation &amp; Tactile Wayfinding
-            </div>
-
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tight leading-[1.12]">
-              Navigate spaces with greater independence.
+              Accessible indoor navigation and tactile maps.
             </h1>
 
             <p className="text-base sm:text-lg text-zinc-600 leading-relaxed font-normal max-w-2xl">
-              TouchRoute transforms architectural floor plans into verified indoor navigation experiences through deterministic spatial topology, dynamic voice guidance, and 3D physical tactile maps.
+              TouchRoute turns architectural floor plans into step-free turn directions, spoken landmark guidance, and 3D-printable tactile maps.
             </p>
 
-            {/* Problem context */}
-            <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200/90 text-zinc-700 text-xs sm:text-sm leading-relaxed max-w-2xl space-y-1">
-              <p className="font-semibold text-zinc-950">
-                The Indoor Wayfinding Challenge
-              </p>
-              <p className="text-zinc-600">
-                Blind and visually impaired individuals encounter barriers inside unfamiliar buildings. TouchRoute turns architectural blueprints into verified non-visual routes and physical tactile maps.
-              </p>
-            </div>
-
             {/* Action buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            <div className="flex flex-wrap items-center gap-3 pt-2">
               <Button
                 variant="primary"
                 size="md"
@@ -60,18 +45,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 Manage Buildings
               </Button>
             </div>
-
-            {/* Verification assurance badge */}
-            <div className="flex items-center gap-6 pt-3 text-xs text-zinc-500 font-medium">
-              <span className="flex items-center gap-1.5">
-                <Shield className="w-4 h-4 text-zinc-700" />
-                Deterministic Graph Safety
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Printer className="w-4 h-4 text-zinc-700" />
-                ISO 21542 Tactile Standards
-              </span>
-            </div>
           </div>
 
           {/* Right Column: Architectural Elevation Preview Card */}
@@ -81,7 +54,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-zinc-900" />
                   <span className="text-xs font-semibold uppercase tracking-wider text-zinc-950">
-                    Spatial Architecture
+                    Navigation Route
                   </span>
                 </div>
                 <span className="text-[11px] font-mono text-zinc-400">

@@ -6,39 +6,39 @@ export const CoreCapabilitiesSection: React.FC = () => {
   const capabilities = [
     {
       icon: <Network className="w-5 h-5 text-zinc-900" />,
-      title: 'Deterministic Graph Routing',
+      title: 'Graph-Based Pathfinding',
       description:
-        'Indoor route calculation is powered by Dijkstra and A* graph algorithms over validated spatial coordinates. Directions reflect exact distances and angular geometry rather than LLM text estimations.',
+        'Calculates shortest indoor routes using Dijkstra and A* algorithms over verified coordinates, computing real distances and turn angles.',
     },
     {
       icon: <Volume2 className="w-5 h-5 text-zinc-900" />,
       title: 'Spoken Wayfinding Instructions',
       description:
-        'Natural spoken turn-by-turn guidance with tactile landmark cues ("Turn right at Central Reception", "Your destination is directly ahead").',
+        'Spoken turn-by-turn guidance with landmark cues ("Turn right at Central Reception", "Your destination is directly ahead").',
     },
     {
       icon: <Box className="w-5 h-5 text-zinc-900" />,
-      title: 'Physical Tactile 3D Relief Maps',
+      title: 'Physical Tactile 3D Maps',
       description:
-        'Generates 3D-printable STL files conforming to ADA and ISO tactile height specifications. Features raised walls, corridor lines, orientation notches, and Braille identifiers.',
+        'Generates 3D-printable STL files with raised walls, corridor pathways, and Braille labels for tactile exploration.',
     },
     {
       icon: <Cpu className="w-5 h-5 text-zinc-900" />,
-      title: 'Modular Speech & Vision Architecture',
+      title: 'AI Floor Plan Interpretation',
       description:
-        'Decoupled backend adapter pattern with Google Gemini integration for dynamic live text-to-speech synthesis and floor plan comprehension.',
+        'Analyzes architectural drawings to detect rooms, doors, and walkways, with dynamic speech synthesis for visitor directions.',
     },
     {
       icon: <FileCheck2 className="w-5 h-5 text-zinc-900" />,
-      title: 'Verification In-The-Loop',
+      title: 'Human Review & Verification',
       description:
-        'Every detected room, corridor junction, and door can be inspected and adjusted by facility managers before routes are published to visitors.',
+        'Every detected room, corridor junction, and door can be inspected and adjusted by building staff before publishing.',
     },
     {
       icon: <ShieldCheck className="w-5 h-5 text-zinc-900" />,
-      title: 'WCAG 2.1 AAA Accessibility',
+      title: 'Keyboard & Screen-Reader Accessible',
       description:
-        'Screen-reader tested, keyboard navigable, acoustic feedback tones, scalable typography, and strict separation between planned routes and live tracking.',
+        'Built with high-contrast surfaces, full keyboard navigation, ARIA screen-reader support, and auditory feedback.',
     },
   ];
 
@@ -47,13 +47,13 @@ export const CoreCapabilitiesSection: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mb-14">
           <span className="text-xs font-semibold uppercase tracking-wider text-zinc-800 bg-zinc-100 px-2.5 py-1 rounded border border-zinc-200">
-            System Architecture
+            Features
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-950 tracking-tight mt-3">
-            Engineered for Precision and Safety
+            What TouchRoute Does
           </h2>
           <p className="text-zinc-600 text-sm sm:text-base mt-2 leading-relaxed">
-            Every feature is designed with the realities of blindness and low-vision wayfinding in mind.
+            Practical tools to make indoor buildings accessible through spoken directions and physical tactile models.
           </p>
         </div>
 

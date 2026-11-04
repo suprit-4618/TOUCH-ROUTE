@@ -76,7 +76,7 @@ export const TactilePreviewModal: React.FC<TactilePreviewModalProps> = ({
       isOpen={isOpen}
       onClose={onClose}
       title={`Tactile Map 3D Relief: ${project?.name || ''}`}
-      description="Pre-fabrication relief model designed in accordance with ISO 21542 and ADA tactile signage guidelines."
+      description="3D relief model with raised walls, corridors, and Braille labels."
       maxWidth="lg"
     >
       <div className="space-y-6 text-zinc-800 text-sm">
@@ -160,8 +160,8 @@ export const TactilePreviewModal: React.FC<TactilePreviewModalProps> = ({
                 <strong className="text-zinc-900 text-sm">{job ? `~${job.estimated_print_time_minutes} min` : '~35 min'}</strong>
               </div>
               <div className="p-3 bg-zinc-50 rounded-lg border border-zinc-200">
-                <span className="text-zinc-500 block text-[10px] uppercase font-mono">Guideline Alignment</span>
-                <strong className="text-zinc-900 text-sm">ADA 703 &bull; ISO 21542</strong>
+                <span className="text-zinc-500 block text-[10px] uppercase font-mono">Profile</span>
+                <strong className="text-zinc-900 text-sm">3D Relief &bull; Braille</strong>
               </div>
             </div>
 

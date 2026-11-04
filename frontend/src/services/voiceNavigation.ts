@@ -3,7 +3,7 @@
  * 
  * Provides an accessible abstraction layer over Web Speech Synthesis
  * (text-to-speech guidance) and Web Speech Recognition (voice destination queries).
- * Conforms to WCAG accessibility guidelines with full screen-reader announcements.
+ * Provides screen-reader announcements and browser speech synthesis.
  */
 
 export interface SpeechSynthesisOptions {

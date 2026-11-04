@@ -3,7 +3,6 @@ import { HeroSection } from '../features/landing/HeroSection';
 import { HowItWorksSection } from '../features/landing/HowItWorksSection';
 import { CoreCapabilitiesSection } from '../features/landing/CoreCapabilitiesSection';
 import { TactileExplanationSection } from '../features/landing/TactileExplanationSection';
-import { AccessibilityPrinciplesSection } from '../features/landing/AccessibilityPrinciplesSection';
 import { CallToActionSection } from '../features/landing/CallToActionSection';
 
 interface LandingPageProps {
@@ -28,7 +27,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({
       <HowItWorksSection />
       <CoreCapabilitiesSection />
       <TactileExplanationSection onOpenTactileModal={onOpenTactileModal} />
-      <AccessibilityPrinciplesSection />
       <CallToActionSection
         onOpenWorkspace={onOpenWorkspace}
         onOpenCreateModal={onOpenCreateModal}
